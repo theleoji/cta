@@ -50,6 +50,7 @@ export default function StationCode() {
       <StationInfo station={station} />
       <div className="flex flex-col w-full">
         {nextTrain.Trains.map((train) => {
+          // Highly unlikely that a train will have the same destination, line, and minutes to arrival -- they'd have to be the same train or be on top of each other or something
           const key = `${train.DestinationName}-${train.Line}-${train.Min}`;
 
           return <NextTrainInfo predictionInfo={train} key={key} />;

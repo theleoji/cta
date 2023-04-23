@@ -5,7 +5,7 @@ export type Address = {
   Zip: string;
 };
 
-export type Station = {
+export type StationAPIType = {
   Code: string;
   Name: string;
   Lat: number;
@@ -18,6 +18,10 @@ export type Station = {
   StationTogether1?: string;
   StationTogether2?: string;
 };
+
+export type Station = {
+  FormattedName: string;
+} & StationAPIType;
 
 type MinArrivalType = number | "ARR" | "BRD" | "BRD&ARR" | "---" | null;
 

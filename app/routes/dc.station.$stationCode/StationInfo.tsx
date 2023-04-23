@@ -16,8 +16,8 @@ function ServedLines({ lines }: { lines: string[] }) {
     <>
       {lines.map((line) => {
         return (
-          <div className="ml-2">
-            <DCLineIcon line={line} key={line} />
+          <div className="ml-2" key={line}>
+            <DCLineIcon line={line} />
           </div>
         );
       })}

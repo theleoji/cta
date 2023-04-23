@@ -51,6 +51,9 @@ devDependencies:
   '@remix-run/serve':
     specifier: ^1.15.0
     version: 1.15.0
+  '@remix-run/server-runtime':
+    specifier: ^1.10.0
+    version: 1.15.0
   '@types/react':
     specifier: ^18.0.35
     version: 18.0.35
@@ -63,6 +66,9 @@ devDependencies:
   typescript:
     specifier: ^4.9.5
     version: 4.9.5
+  zod:
+    specifier: ^3.19.1
+    version: 3.21.4
 
 packages:
 
@@ -7875,7 +7881,6 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
-    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}

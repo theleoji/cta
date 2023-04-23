@@ -10,6 +10,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import tailwind from "./tailwind.css";
+import { FaGithub } from "react-icons/fa";
 
 export const links: LinksFunction = () => {
   return [
@@ -44,6 +45,16 @@ export default function App() {
                 <h2 className="text-xl text-gray-400 ml-4">
                   A proof of concept for a transit tracker
                 </h2>
+              </div>
+              <div className="flex items-center">
+                <a
+                  href="https://github.com/theleoji/transit"
+                  className="text-gray-400 hover:text-gray-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="text-2xl" />
+                </a>
               </div>
             </div>
           </header>

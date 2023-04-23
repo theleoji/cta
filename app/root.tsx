@@ -27,7 +27,7 @@ export default function App() {
         <Links />
       </head>
       <body className="font-navigo">
-        <div className=" w-full h-full min-h-screen max-w-screen">
+        <div className="w-full h-full min-h-screen max-w-screen">
           <Outlet />
         </div>
 

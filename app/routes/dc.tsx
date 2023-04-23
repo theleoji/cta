@@ -69,7 +69,7 @@ export default function DC() {
 
   return (
     <div className="flex flex-col w-full h-auto min-h-screen py-10 px-6 bg-gray-100 dark:bg-gray-900">
-      <div>
+      <div className="max-w-5xl mx-auto w-full">
         <h2 className="text-5xl font-semibold tracking-loose font-underground-petite-caps text-gray-900 dark:text-gray-100">
           Washington, D.C.
         </h2>
@@ -81,7 +81,7 @@ export default function DC() {
         </h4>
       </div>
       <div className="flex flex-col h-auto w-full max-w-4xl mx-auto p-12">
-        <h4 className="text-xl text-gray-900 dark:text-gray-100">
+        <h4 className="text-xl text-gray-900 dark:text-gray-100">w
           Select a station
         </h4>
 

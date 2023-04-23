@@ -1,3 +1,4 @@
+import type { V2_MetaFunction } from "@remix-run/react";
 import { useLoaderData, useNavigate, useParams } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -27,6 +28,14 @@ export const loader: LoaderFunction = async () => {
       "cache-control": "max-age=3600",
     },
   });
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    {
+      title: "DC (WMATA) | Transit",
+    },
+  ];
 };
 
 export default function DC() {

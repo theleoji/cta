@@ -1,6 +1,7 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { AIMPredictionTrainInfo, Station } from "~/types/dc";
+import type { V2_MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
 import NextTrainInfo from "./NextTrainInfo";
 import { StationInfo } from "./StationInfo";
@@ -37,6 +38,14 @@ export const loader: LoaderFunction = async ({ params }) => {
       },
     }
   );
+};
+
+export const meta: V2_MetaFunction = ({ data }) => {
+  return [
+    {
+      title: `${data.station.FormattedName} station info | WMATA (DC) | Transit`,
+    },
+  ];
 };
 
 export default function StationCode() {

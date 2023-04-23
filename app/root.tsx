@@ -1,3 +1,4 @@
+import type { V2_MetaFunction } from "@remix-run/react";
 import {
   Links,
   LiveReload,
@@ -14,6 +15,14 @@ export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: "https://use.typekit.net/ifo6hqw.css" },
     { rel: "stylesheet", href: tailwind },
+  ];
+};
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    {
+      title: "Transit Tracker",
+    },
   ];
 };
 

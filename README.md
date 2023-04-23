@@ -33,11 +33,16 @@ This project uses [pnpm](https://pnpm.io/) for package management.
 
 
 ### Pre-requisites
-- WMATA API key (see [here](https://developer.wmata.com/))
-  - Add the key to a `.env` file in the root directory of the project, like this: `WMATA_API_KEY=your-key-here`
-- Node.js (see [here](https://nodejs.org/en/))
-- pnpm (see [here](https://pnpm.io/installation))
-- A text editor (I recommend [WebStorm](https://www.jetbrains.com/webstorm/) or [VS Code](https://code.visualstudio.com/))
+- A [WMATA API key](https://developer.wmata.com/)
+- [Node.js](https://nodejs.org/en/) (v14.17.0 or later)
+- [pnpm](https://pnpm.io/)
+- [Git](https://git-scm.com/)
+
+### Environment variables
+```dotenv
+# .env
+WMATA_API_KEY="[your WMATA API key]" # Required; see https://developer.wmata.com/
+```
 
 ### Getting started
 

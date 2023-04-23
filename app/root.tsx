@@ -6,16 +6,16 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import {LinksFunction} from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
 
-import tailwind from "./tailwind.css"
+import tailwind from "./tailwind.css";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: "https://use.typekit.net/ifo6hqw.css" },
     { rel: "stylesheet", href: tailwind },
-  ]
-}
+  ];
+};
 
 export default function App() {
   return (
@@ -26,8 +26,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="">
-        <Outlet />
+      <body className="font-navigo">
+        <div className=" w-full h-full min-h-screen max-w-screen">
+          <Outlet />
+        </div>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

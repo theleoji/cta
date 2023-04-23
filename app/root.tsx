@@ -37,6 +37,16 @@ export default function App() {
       </head>
       <body className="font-navigo">
         <div className="w-full h-full min-h-screen max-w-screen">
+          <header className="w-full h-20 bg-gray-900 font-underground dark:bg-gray-950">
+            <div className="max-w-5xl mx-auto h-full flex items-center justify-between">
+              <div className="flex items-end">
+                <h1 className="text-2xl text-gray-100">Transit</h1>
+                <h2 className="text-xl text-gray-400 ml-4">
+                  A proof of concept for a transit tracker
+                </h2>
+              </div>
+            </div>
+          </header>
           <Outlet />
         </div>
 

@@ -18,17 +18,18 @@ export function StationSelector({
   urlStationCode: string | undefined;
 }) {
   const navigate = useNavigate();
-  const isHydrated = useHydrated();
 
   const [selectedStation, setSelectedStation] = useState<Station | null>(
     urlStationCode
       ? allStations.find((station) => station.Code === urlStationCode) ?? null
       : null
   );
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>(
+    selectedStation?.FormattedName ?? ""
+  );
 
   const matchingStations = allStations.filter((station) =>
-    station.Name.toLowerCase().includes(inputValue.toLowerCase())
+    station.FormattedName.toLowerCase().includes(inputValue.toLowerCase())
   );
 
   const onStationSelect = (stationCode = "") => {
@@ -55,7 +56,10 @@ export function StationSelector({
         }
       >
         {() => (
-          <Combobox value={selectedStation?.Name} onChange={onStationSelect}>
+          <Combobox
+            value={selectedStation?.FormattedName}
+            onChange={onStationSelect}
+          >
             <div className="relative w-full mt-2 mb-6">
               <Combobox.Input
                 className="

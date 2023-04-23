@@ -3,6 +3,7 @@ import { json } from "@remix-run/node";
 import type { AIMPredictionTrainInfo, Station } from "~/types/dc";
 import { useLoaderData } from "@remix-run/react";
 import NextTrainInfo from "./NextTrainInfo";
+import { StationInfo } from "./StationInfo";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const stationInfoResponse = await fetch(
@@ -46,13 +47,7 @@ export default function StationCode() {
 
   return (
     <>
-      <div>
-        <h3 className="text-3xl text-gray-900 dark:text-gray-100 mb-4">
-          {station.Address.Street}
-          <br />
-          {station.Address.City}, {station.Address.State} {station.Address.Zip}
-        </h3>
-      </div>
+      <StationInfo station={station} />
       <div className="flex flex-col w-full">
         {nextTrain.Trains.map((train) => {
           const key = `${train.DestinationName}-${train.Line}-${train.Min}`;

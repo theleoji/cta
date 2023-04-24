@@ -5,6 +5,13 @@ import { Outlet, useNavigate } from "@remix-run/react";
 import { useState } from "react";
 import { ClientOnly } from "remix-utils";
 
+/**
+ * A selector for WMATA stations. This component is used on the DC page.
+ * If present, parses the station code from the URL and selects the station.
+ * Navigates on station select to the station's page.
+ * @param allStations The list of all stations.
+ * @param urlStationCode The station code from the URL, if present.
+ */
 export function StationSelector({
   allStations,
   urlStationCode,

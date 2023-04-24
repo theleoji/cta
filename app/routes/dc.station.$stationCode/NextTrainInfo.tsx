@@ -1,7 +1,11 @@
 import type { AIMPredictionTrainInfo } from "~/types/dc";
 import DCLineIcon from "~/components/dc/LineIcon";
 
-const ArrivalTime = ({ min }: { min: AIMPredictionTrainInfo["Min"] }) => {
+const ArrivalTime = ({
+  timeToArrival,
+}: {
+  timeToArrival: AIMPredictionTrainInfo["Min"];
+}) => {
   const specialCases = {
     BRD: "Boarding",
     ARR: "Arriving",
@@ -9,15 +13,20 @@ const ArrivalTime = ({ min }: { min: AIMPredictionTrainInfo["Min"] }) => {
 
   return (
     <div className="ml-5 w-auto text-2xl text-gray-100">
-      {min === null
+      {timeToArrival === null
         ? "No data"
-        : min in specialCases
-        ? specialCases[min as keyof typeof specialCases]
-        : `${min} min`}
+        : timeToArrival in specialCases
+        ? specialCases[timeToArrival as keyof typeof specialCases]
+        : `${timeToArrival} min`}
     </div>
   );
 };
 
+/**
+ * @name NextTrainInfo
+ * @description Displays a single row for a single train's information. Similar to an arrival board.
+ * @param predictionInfo The prediction information for a single train. See `AIMPredictionTrainInfo` for more information.
+ */
 export default function NextTrainInfo({
   predictionInfo,
 }: {
@@ -33,7 +42,7 @@ export default function NextTrainInfo({
           {predictionInfo.DestinationName}
         </h4>
       </div>
-      <ArrivalTime min={predictionInfo.Min} />
+      <ArrivalTime timeToArrival={predictionInfo.Min} />
     </div>
   );
 }

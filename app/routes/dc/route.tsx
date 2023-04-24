@@ -1,8 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/react";
-import { useLoaderData, useNavigate, useParams } from "@remix-run/react";
+import { useLoaderData, useParams } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useState } from "react";
 import type { Station } from "~/types/dc";
 import { Header } from "~/routes/dc/Header";
 import { formatStations } from "~/functions/dc";

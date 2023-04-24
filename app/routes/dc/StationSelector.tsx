@@ -1,14 +1,9 @@
 import type { Station } from "~/types/dc";
 import { Combobox } from "@headlessui/react";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
-import {
-  Outlet,
-  useLoaderData,
-  useNavigate,
-  useParams,
-} from "@remix-run/react";
+import { Outlet, useNavigate } from "@remix-run/react";
 import { useState } from "react";
-import { ClientOnly, useHydrated } from "remix-utils";
+import { ClientOnly } from "remix-utils";
 
 export function StationSelector({
   allStations,
@@ -42,6 +37,7 @@ export function StationSelector({
     setInputValue(station.FormattedName);
     navigate(`./station/${station.Code}`);
   };
+
   return (
     <div className="flex flex-col h-auto w-full max-w-4xl mx-auto p-12">
       <h4 className="text-xl text-gray-900 dark:text-gray-100">

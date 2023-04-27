@@ -67,7 +67,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 export const meta: V2_MetaFunction = ({ data }) => {
   return [
     {
-      title: `${data.station.FormattedName} station info | WMATA (DC) | Transit`,
+      title: `${data.station.Name} station info | WMATA (DC) | Transit`,
     },
   ];
 };

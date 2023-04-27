@@ -64,10 +64,12 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 };
 
-export const meta: V2_MetaFunction = ({ data }) => {
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+  const stationName = data?.data?.station.Name ?? "Unknown station";
+
   return [
     {
-      title: `${data.station.Name} station info | WMATA (DC) | Transit`,
+      title: `${stationName} station info | WMATA (DC) | Transit`,
     },
   ];
 };
